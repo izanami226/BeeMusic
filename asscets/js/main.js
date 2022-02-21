@@ -164,7 +164,7 @@ const app = {
                         <li class="song-id">
                             <p>${(index + 1) < 10 ? '0' + (index + 1) : index + 1}</p>
                         </li>
-                        <li class="song-name">
+                        <li class="song-name fw-6">
                             <p>${song.name}</p>
                         </li>
                         <li class="song-artist">

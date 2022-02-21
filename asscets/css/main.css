@@ -253,7 +253,7 @@ input:checked + ::before {
 }
 
 .search-text[type=text] {
-    color: var(--black-color);
+    color: #ccc;
     opacity: .4;
     font-size: 1.5rem;
 }
