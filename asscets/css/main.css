@@ -184,10 +184,10 @@ input:checked + ::before {
 }
 
 .user-img img {
-    width: 100px;
+    width: 64px;
     position: absolute;
-    top: -85%;
-    left: -28%;
+    top: 0;
+    left: 0;
 }
 
 .user-name {
@@ -198,7 +198,7 @@ input:checked + ::before {
 
 .menu-user i {
     font-size: 1.6rem;
-    margin-left: 70px;
+    margin-left: 150px;
 }
 
 
@@ -522,11 +522,15 @@ input:checked + ::before {
     opacity: .8;
 }
 
-.song-category p {
+.song-category li {
     overflow: hidden;
     display: block;
-	text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.song-category p {
+    display: flex;
+    align-items: center;
 }
 
 .song-id {
@@ -535,6 +539,7 @@ input:checked + ::before {
 
 .song-name {
     width: 30%;
+    position: relative;
 }
 
 .song-artist {
@@ -603,6 +608,11 @@ input:checked + ::before {
     margin: 0 8px;
 }
 
+.player-nav-volume-low:hover i,
+.player-nav-volume-high:hover i {
+    transform: scale(1.1, 1.1);
+}
+
 /* Player Volume */
 .volume {
     width: 72px;
@@ -661,11 +671,25 @@ input:checked + ::before {
 }
 
 /* Suggestion Fav Artist */
+.suggestion-artist-items {
+    height: 40px;
+}
+
 .suggestion-artist-items:hover {
     cursor: pointer;
-    background-color: var(--menu-hover-color);
-    border-radius: 8px;
+    background-color: var(--white-color);
+    border-radius: 12px;
     padding: 0 4px;
+}
+
+.suggestion-artist-items:hover .artist-img {
+    width: 30px;
+    height: 30px;
+}
+
+.suggestion-artist-items:hover .artist-img  img{
+    width: 30px;
+    height: 30px;
 }
 
 .artist-img {

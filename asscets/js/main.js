@@ -21,6 +21,7 @@ const allTagIcon = $$('i')
 const shortcutsTagBox = $$('.shortcuts-tags')
 const suggestionTagP = $$('.suggestion p')
 const shortcutsArtistTitle = $$('.suggestion-artist-category p')
+const shortcutsArtistIcon = $$('.suggestion-artist-category i')
 const thumbnailBox = $('.thumbnail')
 const player = $('.player')
 const search = $('.search')
@@ -45,6 +46,10 @@ const prevBtn = $('.player-nav-action-prev')
 const volume = $('#volume')
 const time = $('#time')
 
+// Volume Button
+const volumeLowBtn = $('.player-nav-volume-low')
+const volumeHighBtn = $('.player-nav-volume-high')
+
 // Random, Repeat 
 const randomBtn = $('.player-nav-action-random')
 const randomIcon = $('.player-nav-action-random i')
@@ -56,6 +61,7 @@ const repeatIcon = $('.player-nav-action-repeat i')
 const timeBegin = $('.player-time-begin')
 const timeTotal = $('.player-time-total')
 let updateTimer
+const h2Element = $('.trending-container-sub-title h2')
 
 // App
 const app = {
@@ -63,20 +69,27 @@ const app = {
     isPlaying: false,
     isRandom: false,
     isRepeat: false,
-    songs: [
+    songs: [          
+        {
+            name: 'Sparkle (スパークル)',
+            artist: 'RADWIMPS',
+            album: '人間開花 (Your Name)',
+            time: '3:01',
+            path: './asscets/data/song/sparkle.mp3'
+        },
+        {
+            name: 'Sinh Ra Đã Là Thứ Đối Lập Nhau',
+            artist: 'Emcee L (Da LAB) ft. Badbies',
+            album: 'Da LAB',
+            time: '3:59',
+            path: './asscets/data/song/sinhradalathudoilapnhau.mp3'
+        },
         {
             name: 'Ghé Qua',
             artist: 'Dick x PC x Tofu',
             album: 'Taynguyensound',
             time: '4:27',
             path: './asscets/data/song/ghequa.mp3'
-        },
-        {
-            name: '24H',
-            artist: 'Lyly ft Magazin',
-            album: 'Chill with me',
-            time: '4:18',
-            path: './asscets/data/song/24h.mp3'
         },
         {
             name: 'Xe Đạp',
@@ -93,9 +106,16 @@ const app = {
             path: './asscets/data/song/aichoai.mp3'
         },
         {
-            name: 'Sao anh chưa về',
+            name: 'Orange',
+            artist: '7!!',
+            album: 'Shigatsu Wa Kimi No Uso',
+            time: '5:49',
+            path: './asscets/data/song/orange.mp3'
+        },
+        {
+            name: 'Sao Anh Chưa Về',
             artist: 'Amee',
-            album: 'Dreamee',
+            album: 'dreAMEE',
             time: '4:36',
             path: './asscets/data/song/saoanhchuave.mp3'
         },
@@ -116,14 +136,21 @@ const app = {
         {
             name: 'Ngày Mai Em ĐI',
             artist: 'Touliver x Lê Hiếu x Soobin Hoàng Sơn',
-            album: 'Ngày Mai Em Đi',
+            album: 'SpaceSpeakers',
             time: '3:46',
             path: './asscets/data/song/ngaymaiemdi.mp3'
-        },
+        },         
+        {
+            name: 'Ao No Waltz (蒼のワルツ)',
+            artist: 'Eve',
+            album: 'Josee, the Tiger and the Fish',
+            time: '4:48',
+            path: './asscets/data/song/aonowaltz.mp3'
+        }, 
         {
             name: 'Muộn Rồi Mà Sao Còn',
             artist: 'Sơn Tùng M-tp',
-            album: 'Sky',
+            album: 'm-tp M-TP',
             time: '4:48',
             path: './asscets/data/song/muonroimasaocon.mp3'
         },     
@@ -144,7 +171,7 @@ const app = {
         {
             name: 'Chúng Ta Của Hiện Tại',
             artist: 'Sơn Tùng M-tp',
-            album: 'Sky',
+            album: 'm-tp M-TP',
             time: '14:50',
             path: './asscets/data/song/chungtacuahientai.mp3'
         },       
@@ -154,7 +181,42 @@ const app = {
             album: 'After Hours',
             time: '4:08',
             path: './asscets/data/song/saveyourtears.mp3'
-        },  
+        },        
+        {
+            name: 'Is There Still Anything That Love Can Do?',
+            artist: 'RADWIMPS',
+            album: 'UPCH-20520',
+            time: '7:28',
+            path: './asscets/data/song/istherestillanythinglovecando.mp3'
+        },         
+        {
+            name: 'Anh Thế Giới Và Em',
+            artist: 'The Weeknd',
+            album: 'After Hours',
+            time: '4:25',
+            path: './asscets/data/song/anhthegioivaem.mp3'
+        },          
+        {
+            name: 'Kimi dattara (君だったら)',
+            artist: 'Happy Birthday',
+            album: '...',
+            time: '5:10',
+            path: './asscets/data/song/kimidatara.mp3'
+        },          
+        {
+            name: 'Michishirube (みちしるべ)',
+            artist: 'Minori Chihara',
+            album: 'Violet Evergarden',
+            time: '4:58',
+            path: './asscets/data/song/michishirube.mp3'
+        },        
+        {
+            name: "Ex’s Hate Me (Part 2)",
+            artist: 'AMEE x B RAY',
+            album: 'dreAMEE',
+            time: '3:40',
+            path: './asscets/data/song/exhateme.mp3'
+        }
     ],
     render: function() {
         const htmls = this.songs.map((song, index) => {
@@ -165,7 +227,12 @@ const app = {
                             <p>${(index + 1) < 10 ? '0' + (index + 1) : index + 1}</p>
                         </li>
                         <li class="song-name fw-6">
-                            <p>${song.name}</p>
+                            <p>
+                                <marquee scrollamount="1"
+                                scrolldelay="20" truespeed="truespeed">
+                                ${song.name}
+                                </marquee>
+                            </p>
                         </li>
                         <li class="song-artist">
                             <p>${song.artist}</p>
@@ -192,7 +259,6 @@ const app = {
     },
     handleEvents: function() {
         const _this = this
-
         // Thả tim
         favIcon.onclick = function(e) {
             favIconActive.classList.toggle('cl-red')
@@ -204,6 +270,7 @@ const app = {
                 audio.pause()
                 _this.pauseSong()
                 _this.circleWavePauseing()
+                _this.allSongMarqueePause()
             }          
             _this.seekUpdate()
         }
@@ -214,6 +281,7 @@ const app = {
                 audio.play()
                 _this.playingSong()
                 _this.circleWavePlaying()
+                _this.allSongMarqueePause()
             }          
         }
 
@@ -243,6 +311,7 @@ const app = {
             // Gọi lại hàm DarkMode() mỗi khi chuyển bài ở chế độ DarkMode
             _this.scrollToActiveSong()
             _this.circleWavePlaying()
+            _this.allSongMarqueePause()
             darkMode()
         }
 
@@ -262,6 +331,7 @@ const app = {
             // Gọi lại hàm DarkMode() mỗi khi chuyển bài ở chế độ DarkMode
             _this.scrollToActiveSong()
             _this.circleWavePlaying()
+            _this.allSongMarqueePause()
             darkMode()
         }
 
@@ -290,9 +360,9 @@ const app = {
         // Tiến độ bài hát
         audio.ontimeupdate = function() {
             if (audio.duration) {
-                const progressPercent = Math.floor(audio.currentTime / audio.duration * 100)
+                const progressPercent = audio.currentTime / audio.duration * 100
                 time.value = progressPercent
-                var x = time.value
+                var x = time.value 
                 var color = 'linear-gradient(90deg, var(--blue-color)' + x + '%, var(--main-background-color)' + x + '%)'
                 time.style.background = color
                 time.addEventListener('input', function() {
@@ -330,7 +400,23 @@ const app = {
                 _this.scrollToActiveSong()
                 _this.circleWavePlaying()
             }
-        }      
+        }
+        
+        // Click Volume to
+        volumeHighBtn.onclick = function(e) {
+            audio.volume = 1
+            volume.value = 100
+            var color = 'linear-gradient(90deg, var(--blue-color)  100%, var(--main-background-color)  100%)'
+            volume.style.background = color
+        }
+
+        // Click Volume nhỏ
+        volumeLowBtn.onclick = function(e) {
+            audio.volume = 0
+            volume.value = 0
+            var color = 'linear-gradient(90deg, var(--blue-color)  0%, var(--main-background-color)  0%)'
+            volume.style.background = color
+        }
     },
     playingSong: function() {
         playBtn.classList.add('none')
@@ -370,7 +456,7 @@ const app = {
         
         this.currentIndex = newIndex
         this.loadCurrentSong()
-    },  
+    },
     seekUpdate: function() {
         // let seekPosition = 0;
         
@@ -406,11 +492,22 @@ const app = {
             })
         }, 100)
     },
+    allSongMarqueePause: function() {
+        const songMarques = $$('.song-name marquee')
+
+        songMarques.forEach(function(songMarque, i) {
+            songMarque.stop()
+        })
+        
+        $('.song--active marquee').start()
+    },
     loadCurrentSong: function() {
         audio.src = this.currentSong.path
         clearInterval(updateTimer)
 
         updateTimer = setInterval(this.seekUpdate, 200)
+        
+        this.allSongMarqueePause()
     },
     playBtnWaves: function() {
         playBtn.classList.add('playBtn-waves')       
@@ -425,7 +522,6 @@ const app = {
         // Hàm loadCurentSong phải nằm sau hàm defineProperties
         // Load Song
         this.loadCurrentSong()
-        
 
         // Lắng nghe/xử lý các sự kiên
         this.handleEvents()
@@ -470,7 +566,7 @@ function darkMode() {
             item.style.setProperty('--menu-hover-color','#092c3e')
         })
         suggestionArtistItems.forEach(function(item) {
-            item.style.setProperty('--menu-hover-color','#15111e')
+            item.style.setProperty('--white-color','#15111e')
         })
         menuTagH4.forEach(function(h4) {
             h4.style.color = 'var(--white-color)'
@@ -512,7 +608,10 @@ function darkMode() {
             p.style.color = 'var(--white-color)'
         })
         shortcutsArtistTitle.forEach(function(p) {
-            p.style.color = 'var(--white-color)'
+            p.style.color = '#fff'
+        })
+        shortcutsArtistIcon.forEach(function(i) {
+            i.style.color = '#fff'
         })
     } else {
         mainBackgr.style.backgroundColor = 'var(--main-background-color)'
@@ -537,7 +636,7 @@ function darkMode() {
             item.style.setProperty('--menu-hover-color','rgba(0, 0, 0, .1)')
         })
         suggestionArtistItems.forEach(function(item) {
-            item.style.setProperty('--menu-hover-color','rgba(0, 0, 0, .1)')
+            item.style.setProperty('--white-color','#fff')
         })
         menuTagH4.forEach(function(h4) {
             h4.style.color = 'var(--black-color)'
@@ -577,6 +676,9 @@ function darkMode() {
         })
         shortcutsArtistTitle.forEach(function(p) {
             p.style.color = 'var(--black-color)'
+        })
+        shortcutsArtistIcon.forEach(function(i) {
+            i.style.color = 'var(--black-color)'
         })
     }
 }
