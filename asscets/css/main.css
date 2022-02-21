@@ -594,6 +594,10 @@ input:checked + ::before {
     height: 3.6rem;
 }
 
+.player-nav-action-next {
+    margin-right: 8px;
+}
+
 .player-nav-action i {
     font-size: 1.4rem;
     margin: 0 8px;
