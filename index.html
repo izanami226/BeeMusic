@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bee Music</title>
+    <link rel="icon" href="./asscets/data/logo/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./asscets/css/main.css">
+    <link rel="stylesheet" href="./asscets/css/base.css">
+    <link rel="stylesheet" href="./asscets/font/fontawesome-free-6.0.0-web/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-background">
+        <div class="main-modal br-white">
+            
+            <!-- Menu -->
+            <div class="col-25 pd-t--20">
+                <div class="menu">
+                    <div class="menu-header pd-l--40">
+                        <label class="dark-mode">
+                            <input type="checkbox" class="dark-switch" oninput="darkMode()">
+                            <span class="slider"></span>
+                        </label>
+
+                        <div class="menu-icon">
+                            <i class="fa-solid fa-bars-staggered"></i>
+                        </div>
+                    </div>
+
+                    <div class="menu-logo pd--20-0 pd-l--40">
+                        <div class="logo">
+                            <img src="./asscets/data/logo/logo.png" alt="" class="logo-img">
+                        </div>
+                        <div class="sub-logo">
+                            <h2 class="fs-2-4">Bee</h2 class="fs-2-4">
+                            <h3 class="fs-2-4">Music</h3>
+                        </div>
+                    </div>
+
+                    <div class="menu-nav pd-l--40">
+                        <div class="nav-items">
+                            <div class="menu-items">
+                                <i class="fa-solid fa-house"></i>
+                                <p>Home</p>
+                            </div>
+                            <div class="menu-items">
+                                <i class="fa-solid fa-chart-column"></i>
+                                <p>Trends</p>
+                            </div>
+                            <div class="menu-items">
+                                <i class="fa-solid fa-compass"></i>
+                                <p>Feed</p>
+                            </div>
+                        </div>
+
+                        <div class="nav-items">
+                            <p class="nav-category">Discover</p>
+                            <div class="menu-items">
+                                <i class="fa-solid fa-table-cells-large"></i>
+                                <p>New and Notable</p>
+                            </div>
+                            <div class="menu-items">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <p>Release Calender</p>
+                            </div>
+                            <div class="menu-items">
+                                <i class="fa-solid fa-ticket"></i>
+                                <p>Events</p>
+                            </div>
+                        </div>
+
+                        <div class="nav-items">
+                            <p class="nav-category">Your Collection</p>
+                            <div class="menu-items">
+                                <i class="fa-solid fa-heart"></i>
+                                <p>Home</p>
+                            </div>
+                            <div class="menu-items">
+                                <i class="fa-solid fa-user-group"></i>
+                                <p>Artist</p>
+                            </div>
+                            <div class="menu-items">
+                                <i class="fa-solid fa-star"></i>
+                                <p>Albums</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-user mr-t--50 pd-l--40 pd-t--15">
+                        <div class="user-img">
+                            <img src="./asscets/data/user/user.jpg" alt="">
+                        </div>
+                        <h4 class="user-name">Lofi Family</h4>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Container -->
+            <div class="col-75 br-purple container-main-theme flex">
+                <div class="col-75 z-999 pd-r--10">
+                    <div class="container mr-t--12">
+                        <!-- Container Header-->
+                        <div class="container-header pd-l--40">
+                            <div class="back-forward">
+                                <i class="fa-solid fa-arrow-left"></i>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                            <div class="search">
+                                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                <input class="search-text input" type="text" placeholder="Search for artist, songs and ...">
+                            </div>
+                        </div>
+
+                        <!-- Container Hot -->
+                        <div class="container-hot pd-t--10 pd-l--40">
+                            <p>What's hot</p>
+                            <img src="./asscets/data/logo/flame.png" alt="">
+                        </div>
+
+                        <!-- Title -->
+                        <div class="container-title pd-l--40">
+                            <h2>Trending</h2>
+                            <div class="sub-container">
+                                <p>More</p>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+
+                        <!-- Trending -->
+                        <div class="pd-l--40">
+                            <div class="trending-container">
+                                <img src="./asscets/data/trending/maxresdefault.jpg" alt="">
+    
+                                <div class="trending-container-sub pd-l--20">
+                                    <div class="trending-container-sub-title">
+                                        <p>Artist</p>
+                                        <h2>On Top</h2>
+                                        <h2>Of The World</h2>
+                                        <div class="trending-container-follow">
+                                            <div class="treding-btn mr-t--6">
+                                                <button class="trending-play-btn btn">PLAY</button>
+                                                <button class="trending-follow-btn btn">FOLLOW</button>
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                    <div class="top-trending pd-r--10">
+                                        <h4 class="trending-month">Monthly Listener</h4>
+                                        <h3 class="trending-listener">90.327</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- App Container -->
+                        <div class="app-container">
+
+                            <!-- Playlist -->
+                            <div class="container-title pd-t--10 pd-l--40">
+                                <h2>My Playlist</h2>
+                                <div class="sub-container">
+                                    <p>Show All</p>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- Song -->
+                            <div class="">
+                                <div class="playlist pd-t--10 mr-l--40">
+                                    <ul class="playlist-category">
+                                        <li class="playlist-id">#</li>
+                                        <li class="playlist-name">TITLE</li>
+                                        <li class="playlist-artist">ARTIST</li>
+                                        <li class="playlist-time">TIME</li>
+                                        <li class="playlist-album">ALBUM</li>
+                                    </ul>
+                                    <ul class="song-list mr-t--10">
+                                        <!-- Song list -->
+
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Music Player -->
+                            <div class="pd-l--40">
+                                <div class="player mr-t--20">
+                                    <div class="player-nav pd-l--20 mr-t--10">
+                                        <div class="player-nav-fav">
+                                            <div class="player-nav-fav-icon">
+                                                <i class="fa-solid fa-heart"></i>
+                                            </div>
+                                            <div class="player-nav-fav-icon">
+                                                <i class="fa-solid fa-music"></i>
+                                            </div>
+                                            <div class="player-nav-fav-icon">
+                                                <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                                            </div>
+                                        </div>
+    
+                                        <!-- Play -->
+                                        <div class="player-nav-action">
+                                            <div class="player-nav-action-repeat flex-ct mr-r--8">
+                                                <i class="fa-solid fa-repeat"></i>
+                                            </div>
+                                            <div class="player-nav-action-prev flex-ct">
+                                                <i class="fa-solid fa-backward-fast opa"></i>
+                                            </div>
+                                            <div class="player-nav-action-play flex-ct playBtn-waves mr--0-20">
+                                                <i class="fa-solid fa-circle-play fs-3-4 opa"></i>
+                                            </div>
+                                            <div class="player-nav-action-pause none flex-ct mr--0-20">
+                                                <i class="fa-solid fa-circle-pause fs-3-4 opa"></i>
+                                            </div>
+                                            <div class="player-nav-action-next flex-ct">
+                                                <i class="fa-solid fa-forward-fast opa"></i>
+                                            </div>
+                                            <div class="player-nav-action-random flex-ct ">
+                                                <i class="fa-solid fa-shuffle"></i>
+                                            </div>
+                                        </div>
+                                        <audio id="audio" src="./asscets/data/song/"></audio>
+    
+                                        <!-- Volumn -->
+                                        <div class="player-nav-volume pd-r--20">
+                                            <div class="player-nav-volume-low flex-ct">
+                                                <i class="fa-solid fa-volume-low fs-1-4"></i>
+                                            </div>
+                                            <div class="player-nav-volume-chance flex-ct">
+                                                <input id="volume" class="volume input-player" type="range"  value="30" step="1" min="0" max="100">                          
+                                            </div>
+                                            <div class="player-nav-volume-high flex-ct">
+                                                <i class="fa-solid fa-volume-high fs-1-4"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+    
+    
+                                    <!-- Player Time -->
+                                    <div class="player-time pd-l--20 pd--10 pd-r--20">
+                                        <p class="player-time-begin fs-1-4"></p>
+                                        <div class="player-nav-time-chance">
+                                            <input id="time" class="time input-player" type="range"  value="0" step="1" min="0" max="100">                          
+                                        </div>
+                                        <p class="player-time-total fs-1-4"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Suggestion -->
+                <div class="col-25">
+                    <div class="suggestion pd-l--20 pd-r--10">
+                        <!-- Shortcuts -->
+                        <div class="suggestion-shortcuts">
+                            <h2 class="suggestion-title pd-t--20 fs-1-8">Shortcuts</h2>
+                            <div class="shortcuts-items flex mr-t--10">
+                                <div class="shortcuts-tags flex-ct mr-r--8">
+                                    <img src="./asscets/data/shortcuts/snow.png" alt="">
+                                    <p class="fs-1-2 fw-6">Chill Hits</p>
+                                </div>
+                                <div class="shortcuts-tags flex-ct">
+                                    <img src="./asscets/data/shortcuts/star.png" alt="">
+                                    <p class="fs-1-2 fw-6">Hop</p>
+                                </div>
+                            </div>
+                            <div class="shortcuts-items flex mr-t--10">
+                                <div class="shortcuts-tags flex-ct mr-r--8">
+                                    <img src="./asscets/data/shortcuts/guitar.png" alt="">
+                                    <p class="fs-1-2 fw-6">Accoustic</p>
+                                </div>
+                                <div class="shortcuts-tags flex-ct">
+                                    <img src="./asscets/data/shortcuts/musical-note.png" alt="">
+                                    <p class="fs-1-2 fw-6">Indie Pop</p>
+                                </div>
+                            </div>
+                            <div class="shortcuts-items flex mr-t--10">
+                                <div class="shortcuts-tags flex-ct mr-r--8">
+                                    <img src="./asscets/data/shortcuts/piano.png" alt="">
+                                    <p class="fs-1-2 fw-6">Piano Blues</p>
+                                </div>
+                                <div class="shortcuts-tags flex-ct">
+                                    <img src="./asscets/data/shortcuts/jazz.png" alt="">
+                                    <p class="fs-1-2 fw-6">Jazz</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fav Artist -->
+                        <div class="suggestion-artist">
+                            <h2 class="suggestion-title pd-t--20 fs-1-8">Fav Artist</h2>
+                            <div class="suggestion-artist-category">
+                                <div class="suggestion-artist-items flex-bw-ct mr--10-0">
+                                    <div class="flex-ct">
+                                        <div class="artist-img mr-r--8">
+                                            <img src="./asscets/data/artist/lyly.jpg" alt="">
+                                        </div>
+                                        <div class="artist-title">
+                                            <p class="fs-1-2 fw-6">Lyly</p>
+                                            <p class="opa-7">29 songs in library</p>
+                                        </div>
+                                    </div>
+
+                                    <i class="fa-solid fa-ellipsis fs-1-4"></i>
+                                </div>
+                                <div class="suggestion-artist-items flex-bw-ct mr--10-0">
+                                    <div class="flex-ct">
+                                        <div class="artist-img mr-r--8">
+                                            <img src="./asscets/data/artist/mtp.jpg" alt="">
+                                        </div>
+                                        <div class="artist-title">
+                                            <p class="fs-1-2 fw-6">Sơn Tùng M-TP</p>
+                                            <p class="opa-7">28 songs in library</p>
+                                        </div>
+                                    </div>
+
+                                    <i class="fa-solid fa-ellipsis fs-1-4"></i>
+                                </div>
+                                <div class="suggestion-artist-items flex-bw-ct mr--10-0">
+                                    <div class="flex-ct">
+                                        <div class="artist-img mr-r--8">
+                                            <img src="./asscets/data/artist/suni.jpg" alt="">
+                                        </div>
+                                        <div class="artist-title">
+                                            <p class="fs-1-2 fw-6">Suni Hạ Linh</p>
+                                            <p class="opa-7">32 songs in library</p>
+                                        </div>
+                                    </div>
+
+                                    <i class="fa-solid fa-ellipsis fs-1-4"></i>
+                                </div>
+                                <div class="suggestion-artist-items flex-bw-ct mr--10-0">
+                                    <div class="flex-ct">
+                                        <div class="artist-img mr-r--8">
+                                            <img src="./asscets/data/artist/denvau.jpg" alt="">
+                                        </div>
+                                        <div class="artist-title">
+                                            <p class="fs-1-2 fw-6">Đen Vâu</p>
+                                            <p class="opa-7">40 songs in library</p>
+                                        </div>
+                                    </div>
+
+                                    <i class="fa-solid fa-ellipsis fs-1-4"></i>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <source src="./asscets/data/song/SƠN TÙNG M-TP - MUỘN RỒI MÀ SAO CÒN - OFFICIAL MUSIC VIDEO.mp3">
+                        <!-- Thumbnail -->
+                        <div class="thumbnail mr-t--20">
+                            <div class="thumbnail-img flex-ct">
+                                <img src="./asscets/data/thumbnail/ghequa.jpeg" class="pd--10" alt="">
+                            </div>
+                            <div class="thumbnail-title flex-bw-ct pd--0-10-10">
+                                <div class="thumbnail-title">
+                                    <p class="fs-1-2 fw-6">Ghé Qua</p>
+                                    <p class="opa-7">Dick x PC x Tofu</p>
+                                </div>
+                                <img src="./asscets/data/shortcuts/more.png" alt="" class="thumbnail-add opa-7">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./asscets/js/main.js"></script>
+</body>
+</html>
