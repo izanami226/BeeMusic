@@ -62,6 +62,8 @@ const timeBegin = $('.player-time-begin')
 const timeTotal = $('.player-time-total')
 let updateTimer
 const h2Element = $('.trending-container-sub-title h2')
+const searchBox = $('.search-text')
+
 
 // App
 const app = {
@@ -264,13 +266,51 @@ const app = {
             favIconActive.classList.toggle('cl-red')
         }
 
+        // Tìm kiếm bài hát
+        searchBox.onchange = function(e) {
+            function removeSearchAccents(search) {
+                return search.normalize('NFD')
+                            .replace(/[\u0300-\u036f]/g, '')
+                            .replace(/đ/g, 'd').replace(/Đ/g, 'D')
+                            .replace(/!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'|\"|\&|\#|\[|\]|~|\$|_|`|-|{|}|\||\\/g," ")
+                            .trim()
+                            .replace(/ + /g," ")
+
+            }
+            const dataSearch = ((e.target.value).toString()).toUpperCase()
+            let newSearch = removeSearchAccents(dataSearch)
+
+            _this.songs.forEach(function(song, index) {
+                const songUpper = ((song.name).toString()).toUpperCase()
+
+                function removeSongAccents(song) {
+                    return song.normalize('NFD')
+                                .replace(/[\u0300-\u036f]/g, '')
+                                .replace(/đ/g, 'd').replace(/Đ/g, 'D')
+                                .replace(/!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'|\"|\&|\#|\[|\]|~|\$|_|`|-|{|}|\||\\/g," ")
+                                .trim()
+                                .replace(/ + /g," ")
+
+                }
+                removeSongAccents(songUpper)
+                
+                let newSong = removeSongAccents(songUpper)
+                console.log(newSearch,newSong)
+                if(newSong.includes(newSearch)) {
+                    _this.currentIndex = index
+                    _this.render()
+
+                    // Render để bài hát được active rồi mới load dữ liệu để play
+                    _this.loadCurrentSong()
+                    audio.play()
+                } 
+            })
+        }
+
         // Khi Click Pause
         pauseBtn.onclick = function() {
             if (_this.isPlaying) {
                 audio.pause()
-                _this.pauseSong()
-                _this.circleWavePauseing()
-                _this.allSongMarqueePause()
             }          
             _this.seekUpdate()
         }
@@ -279,20 +319,24 @@ const app = {
         playBtn.onclick = function() {
             if (!_this.isPlaying) {
                 audio.play()
-                _this.playingSong()
-                _this.circleWavePlaying()
-                _this.allSongMarqueePause()
             }          
         }
 
         // Khi Song Play
         audio.onplay = function() {
             _this.isPlaying = true
+            _this.circleWavePlaying()
+            _this.playingSong()
+            _this.allSongMarqueePause()           
+            _this.scrollToActiveSong()
         }
 
         // Khi Song Pause
         audio.onpause = function() {
             _this.isPlaying = false
+            _this.circleWavePause()
+            _this.pauseSong()
+            _this.allSongMarqueePause()
         }
 
         // Next Song
@@ -379,6 +423,7 @@ const app = {
             audio.currentTime = seekTime
             audio.play()
             _this.playingSong()
+            _this.circleWavePlaying()
         }
 
         // Âm lượng Audio
@@ -429,7 +474,7 @@ const app = {
     circleWavePlaying: function() {
         $('.circle-waves').classList.add('circle')
     },
-    circleWavePauseing: function() {
+    circleWavePause: function() {
         setTimeout(function() {
             $('.circle-waves').classList.remove('circle')
         }, 100)
