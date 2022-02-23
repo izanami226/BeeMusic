@@ -148,20 +148,13 @@ const app = {
             album: 'Josee, the Tiger and the Fish',
             time: '4:48',
             path: './asscets/data/song/aonowaltz.mp3'
-        }, 
-        {
-            name: 'Muộn Rồi Mà Sao Còn',
-            artist: 'Sơn Tùng M-tp',
-            album: 'm-tp M-TP',
-            time: '4:48',
-            path: './asscets/data/song/muonroimasaocon.mp3'
         },     
         {
-            name: 'Thương Em Đến Già',
-            artist: 'Lê Bảo Bình',
-            album: 'Thương Em',
-            time: '4:30',
-            path: './asscets/data/song/thuongemdengia.mp3'
+            name: 'Grand Escape',
+            artist: 'RADWIMPS feat. Toko Miura',
+            album: 'Weathering With You',
+            time: '5:33',
+            path: './asscets/data/song/grandescape.mp3'
         },          
         {
             name: 'Dancing With Your Ghost',
@@ -311,6 +304,7 @@ const app = {
         pauseBtn.onclick = function() {
             if (_this.isPlaying) {
                 audio.pause()
+                _this.circleWavePause()
             }          
             _this.seekUpdate()
         }
@@ -319,22 +313,21 @@ const app = {
         playBtn.onclick = function() {
             if (!_this.isPlaying) {
                 audio.play()
+                _this.circleWavePlaying()
             }          
         }
 
         // Khi Song Play
         audio.onplay = function() {
             _this.isPlaying = true
-            _this.circleWavePlaying()
             _this.playingSong()
-            _this.allSongMarqueePause()           
+            _this.allSongMarqueePause()    
             _this.scrollToActiveSong()
         }
 
         // Khi Song Pause
         audio.onpause = function() {
             _this.isPlaying = false
-            _this.circleWavePause()
             _this.pauseSong()
             _this.allSongMarqueePause()
         }
@@ -347,15 +340,14 @@ const app = {
                 _this.playingSong()
             } else {
                 _this.nextSong()
-                _this.playingSong()
             }
             audio.play()
             // Render lại mỗi khi chuyển bài để Song được active
             _this.render()
-            // Gọi lại hàm DarkMode() mỗi khi chuyển bài ở chế độ DarkMode
-            _this.scrollToActiveSong()
             _this.circleWavePlaying()
+            _this.scrollToActiveSong()
             _this.allSongMarqueePause()
+            // Gọi lại hàm DarkMode() mỗi khi chuyển bài ở chế độ DarkMode
             darkMode()
         }
 
@@ -367,15 +359,14 @@ const app = {
                 _this.playingSong()
             } else {
                 _this.prevSong()
-                _this.playingSong()
             }
             audio.play()
             // Render lại mỗi khi chuyển bài để Song được active
             _this.render()
-            // Gọi lại hàm DarkMode() mỗi khi chuyển bài ở chế độ DarkMode
-            _this.scrollToActiveSong()
             _this.circleWavePlaying()
+            _this.scrollToActiveSong()
             _this.allSongMarqueePause()
+            // Gọi lại hàm DarkMode() mỗi khi chuyển bài ở chế độ DarkMode
             darkMode()
         }
 
@@ -396,8 +387,11 @@ const app = {
             if (_this.isRepeat) {
                 audio.play()
                 _this.playingSong()
+                _this.circleWavePlaying()
             } else {
                 nextBtn.click()
+                _this.playingSong()
+                _this.circleWavePlaying()
             }
         }
 
