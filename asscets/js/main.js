@@ -243,6 +243,9 @@ const app = {
             `
         })
         songList.innerHTML = htmls.join('')
+        // songList.forEach(function(song, index) {
+        //     song.innerHTML = htmls.join('')
+        // })
         $('.song--active .song-id').innerHTML = '<div class="circle-waves"><i class="fa-solid fa-headphones"></i></div>'
     },
     defineProperties: function() {

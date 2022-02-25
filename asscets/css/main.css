@@ -17,6 +17,7 @@
     width: 100%;
     height: 100%;
     transform: scale(1.1,1.1);
+    filter: brightness(50%);
 }
 
 .modal {
@@ -750,4 +751,152 @@ input:checked + ::before {
 .thumbnail-add {
     width: 16px;
     height: 16px;
+}
+
+/* Full List */
+.full-list {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .1);
+    z-index: 999;
+}
+
+.full-list-modal {
+    width: 688px;
+    height: 702px;
+    position: absolute;
+    top: 0;
+    left: 100px;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background-color: var(--white-color);
+    border-radius: 20px;
+}
+
+/* Playlist */
+.fulllist-playlist {
+    height: 58rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.fulllist-playlist-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.fulllist-playlist-category {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    color: var(--black-color);
+    opacity: .6;
+    font-weight: 600;
+    border-bottom: 2px solid var(--black-color);
+}
+
+.fulllist-playlist-category li {
+    height: 30px;
+    padding: 10px 4px 10px 10px;
+}
+
+.fulllist-playlist-id {
+    width: 10%;
+}
+
+.fulllist-playlist-name {
+    width: 30%;
+}
+
+.fulllist-playlist-artist {
+    width: 25%;  
+}
+
+.fulllist-playlist-time {  
+    width: 10%;  
+}
+
+.fulllist-playlist-album {
+    width: 25%;    
+}
+
+/* Song */
+.song-list {
+    overflow-y: scroll;
+    position: relative;
+}
+
+.song-list::-webkit-scrollbar {
+    display: none;
+}
+
+.song-items:active {
+    opacity: .8;
+}
+
+.song-items:hover {
+    cursor: pointer;
+}
+
+.song-category {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    color: var(--black-color);
+    opacity: 1;
+    transition: background-color ease-in .1s;
+    border-radius: 12px;
+}
+
+.song-category:hover {
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 12px;
+}
+
+.song-category li {
+    padding: 10px 4px 10px 10px;
+    opacity: .8;
+}
+
+.song-category li {
+    overflow: hidden;
+    display: block;
+    white-space: nowrap;
+}
+
+.song-category p {
+    display: flex;
+    align-items: center;
+}
+
+.song-id {
+    width: 10%;
+}
+
+.song-name {
+    width: 30%;
+    position: relative;
+}
+
+.song-artist {
+    width: 25%;  
+}
+
+.song-time {  
+    width: 10%;  
+}
+
+.song-album {
+    width: 25%;    
 }

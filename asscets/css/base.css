@@ -3,7 +3,7 @@
     --main-background-color: #e2d4d4;
     --container-background-color: #ebd4d4;
     --black-color: #15111e;
-    --purple-color: #13092b;
+    --purple-color: #0d0124;
     --white-color: #ffffff;
     --blue-color: #092c3e;
     --menu-hover-color: rgba(0, 0, 0, .1);
@@ -258,6 +258,10 @@ h2, h3, h4 {
 
 .pd--0-10 {
     padding: 0 10px;
+}
+
+.pd--0-20 {
+    padding: 0 20px;
 }
 
 .pd--0-10-10 {
