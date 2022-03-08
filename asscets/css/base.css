@@ -388,19 +388,9 @@ ul {
 /* SONG ACTIVE */
 .song--active {
     background-color: var(--white-color);
-    border-radius: 10px;
+    border-radius: 12px;
     width: 100%;
     position: relative;
-}
-
-.song--active::after {
-    content: "";
-    position: absolute;
-    top: 1px;
-    left: 0;
-    width: 100%;
-    height: 4.1rem;
-    border-radius: 10px;
     box-shadow: 0px 0px 16px -10px var(--blue-color);
 }
 

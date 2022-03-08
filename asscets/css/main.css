@@ -386,7 +386,7 @@ input:checked + ::before {
     left: 0;
     width: 100%;
     height: 17rem;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(0, 0, 0, .1)) ;
+    background: linear-gradient(to right, rgba(255, 255, 255, .8) , rgba(0, 0, 0, .1) ) ;
 }
 
 .trending-container img {
@@ -537,11 +537,6 @@ input:checked + ::before {
     color: var(--black-color);
     opacity: 1;
     transition: background-color ease-in .1s;
-    border-radius: 12px;
-}
-
-.song-category:hover {
-    background-color: rgba(0, 0, 0, .1);
     border-radius: 12px;
 }
 
@@ -846,6 +841,8 @@ input:checked + ::before {
 
 .song-items:hover {
     cursor: pointer;
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 12px;
 }
 
 .song-category {
@@ -856,11 +853,6 @@ input:checked + ::before {
     color: var(--black-color);
     opacity: 1;
     transition: background-color ease-in .1s;
-    border-radius: 12px;
-}
-
-.song-category:hover {
-    background-color: rgba(0, 0, 0, .1);
     border-radius: 12px;
 }
 

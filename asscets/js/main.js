@@ -80,68 +80,12 @@ const app = {
             path: './asscets/data/song/sparkle.mp3'
         },
         {
-            name: 'Sinh Ra Đã Là Thứ Đối Lập Nhau',
-            artist: 'Emcee L (Da LAB) ft. Badbies',
-            album: 'Da LAB',
-            time: '3:59',
-            path: './asscets/data/song/sinhradalathudoilapnhau.mp3'
-        },
-        {
-            name: 'Ghé Qua',
-            artist: 'Dick x PC x Tofu',
-            album: 'Taynguyensound',
-            time: '4:27',
-            path: './asscets/data/song/ghequa.mp3'
-        },
-        {
-            name: 'Xe Đạp',
-            artist: 'Thùy Chi',
-            album: 'Tuổi học trò',
-            time: '5:15',
-            path: './asscets/data/song/xedap.mp3'
-        },
-        {
-            name: '#AiChoAi',
-            artist: 'FloD ft M!',
-            album: 'AiChoAi',
-            time: '2:39',
-            path: './asscets/data/song/aichoai.mp3'
-        },
-        {
             name: 'Orange',
             artist: '7!!',
             album: 'Shigatsu Wa Kimi No Uso',
             time: '5:49',
             path: './asscets/data/song/orange.mp3'
-        },
-        {
-            name: 'Sao Anh Chưa Về',
-            artist: 'Amee',
-            album: 'dreAMEE',
-            time: '4:36',
-            path: './asscets/data/song/saoanhchuave.mp3'
-        },
-        {
-            name: '3107 3',
-            artist: 'W-n ft Nâu, Duongg, Titie',
-            album: '3107',
-            time: '3:54',
-            path: './asscets/data/song/31073.mp3'
-        },
-        {
-            name: 'Đau Để Trưởng Thành',
-            artist: 'ONLYC',
-            album: 'ONLYC Album',
-            time: '5:30',
-            path: './asscets/data/song/daudetruongthanh.mp3'
-        },
-        {
-            name: 'Ngày Mai Em ĐI',
-            artist: 'Touliver x Lê Hiếu x Soobin Hoàng Sơn',
-            album: 'SpaceSpeakers',
-            time: '3:46',
-            path: './asscets/data/song/ngaymaiemdi.mp3'
-        },         
+        },        
         {
             name: 'Ao No Waltz (蒼のワルツ)',
             artist: 'Eve',
@@ -155,28 +99,7 @@ const app = {
             album: 'Weathering With You',
             time: '5:33',
             path: './asscets/data/song/grandescape.mp3'
-        },          
-        {
-            name: 'Dancing With Your Ghost',
-            artist: 'Sasha Alex Sloan',
-            album: 'Only Child',
-            time: '3:19',
-            path: './asscets/data/song/dacingwithyourghost.mp3'
         },       
-        {
-            name: 'Chúng Ta Của Hiện Tại',
-            artist: 'Sơn Tùng M-tp',
-            album: 'm-tp M-TP',
-            time: '14:50',
-            path: './asscets/data/song/chungtacuahientai.mp3'
-        },       
-        {
-            name: 'Save Your Tears',
-            artist: 'The Weeknd',
-            album: 'After Hours',
-            time: '4:08',
-            path: './asscets/data/song/saveyourtears.mp3'
-        },        
         {
             name: 'Is There Still Anything That Love Can Do?',
             artist: 'RADWIMPS',
@@ -184,13 +107,6 @@ const app = {
             time: '7:28',
             path: './asscets/data/song/istherestillanythinglovecando.mp3'
         },         
-        {
-            name: 'Anh Thế Giới Và Em',
-            artist: 'The Weeknd',
-            album: 'After Hours',
-            time: '4:25',
-            path: './asscets/data/song/anhthegioivaem.mp3'
-        },          
         {
             name: 'Kimi dattara (君だったら)',
             artist: 'Happy Birthday',
@@ -204,13 +120,20 @@ const app = {
             album: 'Violet Evergarden',
             time: '4:58',
             path: './asscets/data/song/michishirube.mp3'
-        },        
+        },          
         {
-            name: "Ex’s Hate Me (Part 2)",
-            artist: 'AMEE x B RAY',
-            album: 'dreAMEE',
-            time: '3:40',
-            path: './asscets/data/song/exhateme.mp3'
+            name: 'Kokoro no Soba ni | 心のそばに | Close to your heart',
+            artist: 'Kaho Nakamura',
+            album: 'Belle',
+            time: '5:01',
+            path: './asscets/data/song/lendmeyourvoice.mp3'
+        },          
+        {
+            name: 'A Million Miles Away',
+            artist: 'Kaho Nakamura',
+            album: 'Belle',
+            time: '8:01',
+            path: './asscets/data/song/amillionmilesaway.mp3'
         }
     ],
     render: function() {
@@ -596,6 +519,7 @@ function darkMode() {
         circleWave.style.setProperty('--black-color','white')
         playerWave.style.setProperty('--black-color','white')
         songActive.style.backgroundColor = 'var(--black-color)'
+        songActive.style.boxShadow = '0px 0px 16px -10px var(--white-color)'
         songIconActive.style.color = 'var(--white-color)'
         thumbnailBox.style.backgroundColor = 'var(--black-color)'
         allTagIcon.forEach(function(i) {
@@ -666,6 +590,7 @@ function darkMode() {
         circleWave.style.setProperty('--black-color','black')
         playerWave.style.setProperty('--black-color','black')
         songActive.style.backgroundColor = 'var(--white-color)'
+        songActive.style.boxShadow = '0px 0px 16px -10px var(--black-color)'
         songIconActive.style.color = 'var(--black-color)'
         thumbnailBox.style.backgroundColor = 'var(--white-color)'   
         allTagIcon.forEach(function(i) {
